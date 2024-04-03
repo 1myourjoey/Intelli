@@ -14,5 +14,19 @@
 <div th:unless="${name} == '영희'">
     <p>영희가 아닙니다.</p>
 </div>
+
+<ul>
+    <li th:each="dto : ${list}">
+        <table th:border="1">
+            <tr>
+                <td>[[${dto.id}]]</td>
+                <td>[[${dto.name}]]</td>
+                <td>[[${dto.mail}]]</td>
+                <td>[[${dto.age}]]</td>
+                <td>[[${dto.memo}]]</td>
+            </tr>
+        </table>
+    </li>
+</ul>
 </body>
 </html>

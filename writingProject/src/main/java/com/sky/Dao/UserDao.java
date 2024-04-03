@@ -51,6 +51,23 @@ public class UserDao {
                 user.setName(rs.getString("name"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
+                user.setUserNum(rs.getInt("usernum"));
+                return user;
+            });
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+    public UserDto findByUserNum(Integer userNum) {
+        String query = "SELECT * FROM user WHERE userNum = ?";
+        try {
+            return jdbcTemplate.queryForObject(query, new Object[]{userNum}, (rs, rowNum) -> {
+                UserDto user = new UserDto();
+                user.setUserNum(rs.getInt("userNum"));
+                user.setId(rs.getString("id"));
+                user.setName(rs.getString("name"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
                 return user;
             });
         } catch (EmptyResultDataAccessException e) {

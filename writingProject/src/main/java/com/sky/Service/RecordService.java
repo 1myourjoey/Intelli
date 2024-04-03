@@ -24,10 +24,6 @@ public class RecordService {
 //        recordDao.insertRecord(record);
 //    }
 public void insert(RecordDto record) {
-    // 랜덤하게 선택된 동화의 제목 가져오기
-    String title = fairyTaleDao.getTitleByStoryId(record.getStoryId());
-    record.setTitle(title);
-    // DAO에 전달하여 데이터베이스에 저장
     recordDao.insertRecord(record);
 }
 

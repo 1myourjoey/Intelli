@@ -37,12 +37,18 @@ public class RecordController {
 //        return "redirect:/";
 //    }
 	@PostMapping("/insertRecord")
-	public String insertRecord(@RequestParam("secondTextbox") String content) {
+	public String insertRecord(@RequestParam("secondTextbox") String content,
+							   @RequestParam("randomFairyTaleTitle") String randomFairyTaleTitle,
+							   @RequestParam("userNum") Integer userNum) {
 		// 받은 데이터로 RecordDto 객체 생성
 		RecordDto record = new RecordDto();
+		record.setTitle(randomFairyTaleTitle);
 		record.setContent(content);
+		record.setUserNum(userNum); // 사용자의 userNum 설정
+
 		// RecordService를 통해 데이터베이스에 삽입
 		recordService.insert(record);
+
 		// 삽입 후에는 다시 첫 페이지로 리다이렉트
 		return "redirect:/";
 	}

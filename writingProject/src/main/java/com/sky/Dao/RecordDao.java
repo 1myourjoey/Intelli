@@ -28,8 +28,8 @@ public class RecordDao {
 						rs.getString("status"),
 						rs.getString("time"),
 						rs.getInt("userNum"),
-						rs.getInt("storyId")
-				);
+						rs.getInt("storyId"),
+						rs.getString("title"));
 				return record;
 			}
 		});
@@ -42,8 +42,8 @@ public class RecordDao {
 					public RecordDto mapRow(ResultSet rs, int rowNum) throws SQLException {
 						RecordDto record = new RecordDto(
 
-								rs.getString("content"), rs.getString("status"), rs.getString("time"),
-								rs.getInt("userNum"), rs.getInt("storyId")
+								rs.getString("title"), rs.getString("content"), rs.getString("status"), rs.getString("time"),
+								rs.getLong("userNum"), rs.getInt("storyId")
 
 				);
 
@@ -53,29 +53,15 @@ public class RecordDao {
 
 		return results; // 결과 반환
 	}
-//	  public void insertRecord(RecordDto record) {
-//	        String sql = "INSERT INTO record (content, status, time, userNum, storyId) VALUES (?, ?, NOW(), ?, ?)";
-//	        jdbcTemplate.update(sql, record.getContent(), record.getStatus(), record.getUserNum(), record.getStoryId());
-//	    }
+
 
 	public void insertRecord(RecordDto record) {
-		// 랜덤하게 선택된 동화의 제목 가져오기
-		String title = fairyTaleDao.selectRandom().getTitle();
-		// 레코드 객체에 제목 설정
-		record.setTitle(title);
 		// DAO에 전달하여 데이터베이스에 저장
 		String sql = "INSERT INTO record (content, status, time, userNum, storyId, title) VALUES (?, ?, NOW(), ?, ?, ?)";
 		jdbcTemplate.update(sql, record.getContent(), record.getStatus(), record.getUserNum(), record.getStoryId(), record.getTitle());
 	}
 
-//	public void insertRecord(RecordDto record) {
-//		// 제목 추가
-//		String title = getTitleByStoryId(record.getStoryId()); // storyId를 이용하여 제목을 가져오는 로직을 구현해야 함
-//		record.setTitle(title);
-//		// DAO에 전달하여 데이터베이스에 저장
-//		String sql = "INSERT INTO record (content, status, time, userNum, storyId) VALUES (?, ?, NOW(), ?, ?)";
-//		jdbcTemplate.update(sql, record.getContent(), record.getStatus(), record.getUserNum(), record.getStoryId());
-//	}
+
 
 
 	public String getTitleByStoryId(long storyId) {
