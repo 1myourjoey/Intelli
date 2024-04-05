@@ -16,6 +16,8 @@ public class RecordService {
     @Autowired
     FairyTaleDao fairyTaleDao;
 
+
+
 	public List<RecordDto> selectAll() {
         return recordDao.selectAll();
     }
@@ -26,10 +28,15 @@ public class RecordService {
 public void insert(RecordDto record) {
     recordDao.insertRecord(record);
 }
-
+    public List<RecordDto> getAllRecords() {
+        return recordDao.selectAll();
+    }
 
     public List<RecordDto> getRecordsByUserNum(int userNum) {
         return recordDao.selectByUserNum(userNum);
+    }
+    public void saveRecord(RecordDto record) {
+        recordDao.insertRecord(record);
     }
 
 

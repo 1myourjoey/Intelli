@@ -24,12 +24,13 @@ public class RecordDao {
 			@Override
 			public RecordDto mapRow(ResultSet rs, int rowNum) throws SQLException {
 				RecordDto record = new RecordDto(
+						rs.getString("title"),
 						rs.getString("content"),
 						rs.getString("status"),
 						rs.getString("time"),
 						rs.getInt("userNum"),
-						rs.getInt("storyId"),
-						rs.getString("title"));
+						rs.getInt("storyId")
+						);
 				return record;
 			}
 		});
