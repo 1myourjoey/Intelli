@@ -16,12 +16,14 @@ repositories {
 }
 
 dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     runtimeOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'mysql:mysql-connector-java'
-    implementation 'org.projectlombok:lombok'
+
     implementation 'com.google.code.gson:gson'
     testImplementation 'junit:junit'
     implementation 'org.slf4j:slf4j-api'

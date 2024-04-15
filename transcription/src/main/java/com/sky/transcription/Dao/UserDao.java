@@ -77,5 +77,14 @@ public class UserDao {
         String query = "INSERT INTO user (id, name, password, email) VALUES (?, ?, ?, ?)";
         jdbcTemplate.update(query, user.getId(), user.getName(), user.getPassword(), user.getEmail());
     }
+    public void update(UserDto user) {
+        String query = "UPDATE user SET password=?, email=? WHERE userNum=?";
+        jdbcTemplate.update(query, user.getPassword(), user.getEmail(), user.getUserNum());
+    }
+    public boolean isEmailAvailable(String email) {
+        String query = "SELECT COUNT(*) FROM user WHERE email = ?";
+        int count = jdbcTemplate.queryForObject(query, Integer.class, email);
+        return count == 0;
+    }
 }
 

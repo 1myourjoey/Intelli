@@ -53,6 +53,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/recordList">Record</a></li>
                             <li><a class="dropdown-item" href="/personal">Personal</a></li>
+                            <li><a class="dropdown-item" href="/myPage">MY PAGE</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
@@ -66,9 +67,7 @@
                                     Welcome, ${sessionScope.user.userNum}
                                 </c:if>
                             </c:when>
-                            <c:otherwise>
-                                <a class="nav-link" href="/login">Login</a>
-                            </c:otherwise>
+
                         </c:choose>
                     </li>
                 </ul>

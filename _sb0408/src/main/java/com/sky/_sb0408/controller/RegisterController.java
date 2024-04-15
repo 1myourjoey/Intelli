@@ -6,10 +6,7 @@ import com.sky._sb0408.spring.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/register")
@@ -49,5 +46,20 @@ public class RegisterController {
 			return "register/step2";
 		}
 	}
+
+	@ModelAttribute
+	public void case1(Model model){
+		model.addAttribute("value1", "High High");
+	}
+	@ModelAttribute("value2")
+	public String case2(){
+		return "It's glad to see u";
+	}
+
+
+
+
+
+
 
 }

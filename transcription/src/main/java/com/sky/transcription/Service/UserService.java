@@ -39,5 +39,41 @@ public class UserService {
 		}
 		return null; // 사용자 정보가 없는 경우 null 반환
 	}
+	public void updateUser(Integer userNum, String newPassword, String newEmail) {
+		// 사용자 번호로 사용자 정보를 가져옴
+		UserDto user = userDao.findByUserNum(userNum);
 
+		// 사용자 정보가 존재하는지 확인
+		if (user == null) {
+			// 사용자 정보가 없으면 종료
+			return;
+		}
+
+		// 새로운 비밀번호가 비어 있지 않고 null이 아닌 경우에만 비밀번호를 업데이트함
+		if (newPassword != null && !newPassword.isEmpty()) {
+			user.setPassword(newPassword);
+		}
+
+		// 새로운 이메일이 비어 있지 않고 null이 아닌 경우에만 이메일을 업데이트함
+		if (newEmail != null && !newEmail.isEmpty()) {
+			// 새로운 이메일이 중복되는지 확인
+			if (isEmailAvailable(newEmail)) {
+				user.setEmail(newEmail);
+			} else {
+				// 중복되는 이메일이면 처리
+				// 여기서는 예외를 던지거나 적절한 방법으로 처리
+			}
+		}
+
+		// 변경된 사용자 정보를 데이터베이스에 업데이트함
+		userDao.update(user);
+	}
+
+	// 이메일이 중복되는지 확인하는 메서드
+	private boolean isEmailAvailable(String email) {
+		// 이메일이 중복되지 않는지 확인하는 로직 구현
+		// 중복되지 않으면 true를 반환, 중복되면 false를 반환
+		// 이 예시에서는 userDao에 이메일 중복을 확인하는 메서드가 있다고 가정
+		return userDao.isEmailAvailable(email);
+	}
 }
