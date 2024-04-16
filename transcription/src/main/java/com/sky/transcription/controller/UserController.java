@@ -150,6 +150,12 @@ public String login(@RequestParam String id,
 
 		return "redirect:/myPage"; // 내 정보 페이지로 리다이렉트
 	}
-
+	@GetMapping("/checkEmail")
+	public boolean checkEmail(@RequestParam String email) {
+		// 이메일이 중복되는지 확인하는 서비스 메소드를 호출합니다.
+		// 서비스 메소드는 데이터베이스에서 이메일을 검색하여 중복 여부를 확인합니다.
+		boolean isEmailAvailable = userService.isEmailAvailable(email);
+		return isEmailAvailable;
+	}
 
 }

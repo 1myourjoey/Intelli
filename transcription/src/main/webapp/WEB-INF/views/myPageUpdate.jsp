@@ -30,10 +30,14 @@
                         </div>
                         <div class="mb-3">
                             <label for="newEmail" class="form-label">New Email</label>
-                            <input type="email" class="form-control" id="newEmail" name="newEmail" required>
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="newEmail" name="newEmail" required>
+                                <button type="button" class="btn btn-primary" id="checkEmailBtn">Check Duplicate</button>
+                            </div>
+                            <span id="emailError" class="text-danger"></span>
                         </div>
                         <input type="hidden" name="userNum" value="${userNum}">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary" id="updateBtn" >Update</button>
                     </form>
                 </div>
             </div>
@@ -41,6 +45,6 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

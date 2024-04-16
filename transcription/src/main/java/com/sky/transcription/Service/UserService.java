@@ -70,7 +70,7 @@ public class UserService {
 	}
 
 	// 이메일이 중복되는지 확인하는 메서드
-	private boolean isEmailAvailable(String email) {
+	public boolean isEmailAvailable(String email) {
 		// 이메일이 중복되지 않는지 확인하는 로직 구현
 		// 중복되지 않으면 true를 반환, 중복되면 false를 반환
 		// 이 예시에서는 userDao에 이메일 중복을 확인하는 메서드가 있다고 가정
