@@ -7,3 +7,5 @@ c
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 [
 +src/main/java/board/board/entity/Board.java,6\7\6762215f247932312d66bf763366d8a5500ecd25
+[
++src/main/java/board/board/dto/BoardDto.java,4\7\478960f3fbdf4aef440e8b026f6bc9577d270bc5

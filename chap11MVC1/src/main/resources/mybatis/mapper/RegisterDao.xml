@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sky.chap11mvc1.repository.MemberBatisDao">
+
+    <insert id="insertMember" parameterType="com.sky.chap11mvc1.entity.MemberEntity">
+        INSERT INTO member (email, name, password, regdate)
+        VALUES (#{email}, #{name}, #{password}, #{regdate})
+    </insert>
+
+    <select id="selectByEmail" resultType="com.sky.chap11mvc1.spring.Member" parameterType="String">
+        SELECT * FROM member WHERE email = #{email}
+    </select>
+
+    <select id="countDao" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM member
+    </select>
+
+    <select id="listDao" resultType="com.sky.chap11mvc1.entity.MemberEntity">
+        SELECT * FROM member ORDER BY id DESC
+    </select>
+
+    <select id="viewDao" resultType="com.sky.chap11mvc1.entity.MemberEntity">
+        SELECT * FROM member WHERE id = #{id}
+    </select>
+
+    <insert id="writeDao" parameterType="com.sky.chap11mvc1.entity.MemberEntity">
+        INSERT INTO member (email, password, name, regdate)
+        VALUES (#{email}, #{password}, #{name}, #{regdate})
+    </insert>
+
+    <delete id="deleteDao" parameterType="java.lang.Long">
+        DELETE FROM member WHERE id = #{id}
+    </delete>
+
+</mapper>
