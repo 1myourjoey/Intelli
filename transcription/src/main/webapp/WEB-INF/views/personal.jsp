@@ -44,6 +44,7 @@
             <td>${record.status}</td>
             <td>${record.userNum}</td>
             <td>${record.time}</td>
+
         </tr>
     </c:forEach>
     </tbody>

@@ -16,6 +16,12 @@
             border-radius: 5px;
         }
     </style>
+    <style>
+        .resizable-input {
+            resize: vertical; /* 위아래로 크기 조절 가능하도록 설정 */
+            min-height: 50px; /* 입력란의 최소 높이 */
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -88,6 +94,7 @@
                 <%-- 랜덤하게 선택된 동화의 제목 출력 --%>
                 <c:if test="${not empty randomFairyTale}">
                     ${randomFairyTale.title}
+                    ${randomFairyTale.storyId}
                 </c:if>
             </h3>
         </div>
@@ -101,8 +108,9 @@
         <div class="mb-5">
             <form action="/insertRecord" method="post">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="secondTextbox" placeholder="두 번째 텍스트 박스">
+                    <textarea class="form-control resizable-input" name="secondTextbox" placeholder="두 번째 텍스트 박스" rows="6"></textarea>
                     <input type="hidden" name="randomFairyTaleTitle" value="${randomFairyTale.title}">
+                    <input type="hidden" name="storyId" value="${randomFairyTale.storyId}">
                     <c:choose>
                         <c:when test="${not empty sessionScope.user}">
                             <c:if test="${not empty sessionScope.user.userNum}">
@@ -110,7 +118,7 @@
                             </c:if>
                         </c:when>
                     </c:choose>
-                    <button type="submit" class="btn btn-success">데이터 삽입</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </div>
             </form>
         </div>

@@ -24,6 +24,7 @@ public class RecordDao {
 			@Override
 			public RecordDto mapRow(ResultSet rs, int rowNum) throws SQLException {
 				RecordDto record = new RecordDto(
+						rs.getInt("recordNum"),
 						rs.getString("title"),
 						rs.getString("content"),
 						rs.getString("status"),
@@ -62,11 +63,12 @@ public class RecordDao {
 		jdbcTemplate.update(sql, record.getContent(), record.getStatus(), record.getUserNum(), record.getStoryId(), record.getTitle());
 	}
 
-
-
-
-	public String getTitleByStoryId(long storyId) {
-		String sql = "SELECT title FROM fairytale WHERE storyid = ?";
-		return jdbcTemplate.queryForObject(sql, String.class, storyId);
+	public void deleteRecord(int recordId) {
+		String sql = "DELETE FROM record WHERE recordNum = ?";
+		jdbcTemplate.update(sql, recordId);
 	}
+
+
+
+
 }

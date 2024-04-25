@@ -1,7 +1,9 @@
 package com.sky.transcription.controller;
 
 
+import com.sky.transcription.Dto.RecordDto;
 import com.sky.transcription.Dto.UserDto;
+import com.sky.transcription.Service.RecordService;
 import com.sky.transcription.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,8 @@ import java.util.List;
 public class UserController {
 	@Autowired
 	UserService userService;
+	@Autowired
+	RecordService recordService;
 
 	@GetMapping("login")
 	public String login() {
@@ -102,6 +106,8 @@ public String login(@RequestParam String id,
 		model.addAttribute("id", loggedInUser.getId());
 		model.addAttribute("name", loggedInUser.getName());
 		model.addAttribute("email", loggedInUser.getEmail());
+		List<RecordDto> personalRecords = recordService.getRecordsByUserNum(loggedInUser.getUserNum());
+		model.addAttribute("personalRecords", personalRecords);
 
 		return "myPage";
 	}

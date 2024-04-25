@@ -29,6 +29,7 @@ public String content(Model model) {
 	model.addAttribute("randomFairyTale", randomFairyTale);
 
 	long randomStoryId = randomFairyTale.getStoryId();
+	model.addAttribute("randomStoryId", randomStoryId);
 
 	FairyTaleDto selectedFairyTale = fairyTaleService.selectByStoryId(randomStoryId);
 	model.addAttribute("selectedFairyTale", selectedFairyTale);

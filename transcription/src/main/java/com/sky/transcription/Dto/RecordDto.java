@@ -15,8 +15,10 @@ public class RecordDto {
 	private String time;
 	private long userNum;
 	private long storyId;
-	public RecordDto(String content, String status, String time, long userNum, long storyId, String title) {
-		super();
+
+	public RecordDto(long recordNum, String title, String content, String status, String time, long userNum, long storyId) {
+		this.recordNum = recordNum;
+		this.title = title;
 		this.content = content;
 		this.status = status;
 		this.time = time;
@@ -31,5 +33,9 @@ public class RecordDto {
 		this.time = time;
 		this.userNum = userNum;
 		this.storyId = storyId;
+	}
+
+	public void setRecordNum(long recordNum) {
+		this.recordNum = recordNum;
 	}
 }

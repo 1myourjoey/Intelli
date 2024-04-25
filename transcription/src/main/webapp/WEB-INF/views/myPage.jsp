@@ -28,17 +28,39 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">User Information</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>User Number:</strong> ${userNum}</li>
-                        <li class="list-group-item"><strong>ID:</strong> ${id}</li>
-                        <li class="list-group-item"><strong>Name:</strong> ${name}</li>
-                        <li class="list-group-item"><strong>Email:</strong> ${email}</li>
-                    </ul>
+                    <div class="list-group">
+                        <div class="list-group-item"><strong>User Number:</strong> ${userNum}</div>
+                        <div class="list-group-item"><strong>ID:</strong> ${id}</div>
+                        <div class="list-group-item"><strong>Name:</strong> ${name}</div>
+                        <div class="list-group-item"><strong>Email:</strong> ${email}</div>
+                    </div>
                 </div>
             </div>
             <div class="edit-button-container">
                 <button onclick="location.href='/myPageUpdate'" class="btn btn-primary">수정</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Personal Records</h5>
+            <form action="/deleteRecords" method="post"> <!-- form 태그로 감싸기 -->
+                <button type="submit" class="btn btn-danger">Record Delete</button> <!-- 삭제 버튼을 submit 버튼으로 변경 -->
+                <div class="list-group">
+                    <c:forEach items="${personalRecords}" var="record">
+                        <div class="list-group-item">
+                            <input type="checkbox" name="recordIds" value="${record.getRecordNum()}">
+                            <strong>recordNum:</strong> ${record.recordNum}<br>
+                            <strong>Title:</strong> ${record.title}<br>
+                            <strong>Content:</strong> ${record.content}<br>
+                            <strong>Time:</strong> ${record.time}<br>
+                        </div>
+                    </c:forEach>
+                </div>
+            </form>
         </div>
     </div>
 </div>

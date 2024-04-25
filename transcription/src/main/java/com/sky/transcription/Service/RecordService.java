@@ -38,6 +38,11 @@ public void insert(RecordDto record) {
         recordDao.insertRecord(record);
     }
 
+    public void deleteRecords(List<Integer> recordIds) {
+        for (Integer recordId : recordIds) {
+            recordDao.deleteRecord(recordId);
+        }
+    }
 
 
 }

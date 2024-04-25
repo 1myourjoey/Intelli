@@ -38,7 +38,10 @@ public class FairyTaleDao {
 		List<FairyTaleDto> allFairyTales = selectAll();
 		Random random = new Random();
 		int randomIndex = random.nextInt(allFairyTales.size());
-		return allFairyTales.get(randomIndex);
+		FairyTaleDto randomFairyTale = allFairyTales.get(randomIndex);
+		long randomStoryId = randomFairyTale.getStoryId(); // 동화의 아이디 가져오기
+		randomFairyTale.setStoryId(randomStoryId); // storyId 설정
+		return randomFairyTale;
 	}
 	public FairyTaleDto selectByStoryId(long storyId) {
 		String sql = "SELECT * FROM fairytale WHERE storyId = ?";
