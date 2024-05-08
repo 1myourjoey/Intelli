@@ -1,0 +1,11 @@
+
+x
+java:S1488""bImmediately return this expression instead of assigning it to the temporary variable "collEntity".(¤ð¤õ
+x
+java:S1488,"bImmediately return this expression instead of assigning it to the temporary variable "deptEntity".(º¦ŒÒ
+|
+java:S14885"fImmediately return this expression instead of assigning it to the temporary variable "deptEntityList".(™›ö©
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ

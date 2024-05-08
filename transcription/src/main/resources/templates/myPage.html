@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link th:href="@{/webjars/bootstrap/5.3.0-alpha1/dist/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+        /* 추가적인 스타일링이 필요한 경우 여기에 작성하세요 */
+        .container {
+            padding: 20px;
+        }
+        .edit-button-container {
+            text-align: center; /* 수정 버튼을 가운데 정렬 */
+            margin-top: 20px; /* 수정 버튼과 카드 사이의 간격 조절 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center"><a href="/">My Page</a></h1>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">User Information</h5>
+                    <div class="list-group">
+                        <div class="list-group-item"><strong>User Number:</strong> [[${userNum}]]</div>
+                        <div class="list-group-item"><strong>ID:</strong> [[${id}]]</div>
+                        <div class="list-group-item"><strong>Name:</strong> [[${name}]]</div>
+                        <div class="list-group-item"><strong>Email:</strong> [[${email}]]</div>
+                    </div>
+                </div>
+            </div>
+            <div class="edit-button-container">
+                <a th:href="@{/myPageUpdate}" class="btn btn-primary">수정</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Personal Records</h5>
+            <form th:action="@{/deleteRecords}" method="post"> <!-- form 태그로 감싸기 -->
+                <button type="submit" class="btn btn-danger">Record Delete</button> <!-- 삭제 버튼을 submit 버튼으로 변경 -->
+                <div class="list-group">
+                    <th:block th:each="record : ${personalRecords}">
+                        <div class="list-group-item">
+                            <input type="checkbox" th:name="recordIds" th:value="${record.recordNum}">
+                            <strong>recordNum:</strong> [[${record.recordNum}]]<br>
+                            <strong>Title:</strong> [[${record.title}]]<br>
+                            <strong>Content:</strong> [[${record.content}]]<br>
+                            <strong>Time:</strong> [[${record.time}]]<br>
+                        </div>
+                    </th:block>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/webjars/bootstrap/5.3.0-alpha1/dist/js/bootstrap.min.js}"></script>
+</body>
+</html>

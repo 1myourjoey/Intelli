@@ -1,0 +1,43 @@
+
+~
+java:S1488J"cImmediately return this expression instead of assigning it to the temporary variable "collegeList".(ÜÀÒúÿÿÿÿ
+{
+java:S1488R"fImmediately return this expression instead of assigning it to the temporary variable "resultRowCount".(‡‹y
+|
+java:S1488w"fImmediately return this expression instead of assigning it to the temporary variable "resultRowCount".(úäûÈ
+€
+java:S1488"dImmediately return this expression instead of assigning it to the temporary variable "collTuitList".(²Ë÷øÿÿÿÿ
+}
+java:S1488¥"fImmediately return this expression instead of assigning it to the temporary variable "resultRowCount".(Šö’×
+w
+java:S1488Ë"`Immediately return this expression instead of assigning it to the temporary variable "roomList".(…Ôİ
+}
+java:S1488Ó"fImmediately return this expression instead of assigning it to the temporary variable "resultRowCount".(ğĞ´÷
+z
+java:S1488ñ"cImmediately return this expression instead of assigning it to the temporary variable "subjectList".(¨—›Ş
+X
+java:S4973"<Strings and Boxed types should be compared using "equals()".(èú»Ùúÿÿÿÿ
+X
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813-"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813/"BRemove this field injection and use constructor injection instead.(êæÄŞ
+@	java:S106A"+Replace this use of System.out by a logger.(ÅîÊ×
+@	java:S106d"+Replace this use of System.out by a logger.(²§ªî
+@	java:S106n"+Replace this use of System.out by a logger.(Öê¬¸
+A	java:S106"+Replace this use of System.out by a logger.(²’ÊÑ
+A	java:S106•"+Replace this use of System.out by a logger.(ì¤¯
+F	java:S106¯"+Replace this use of System.out by a logger.(ãïú¨øÿÿÿÿ
+A	java:S106Ã"+Replace this use of System.out by a logger.(­¦º”
+>
+java:S1125á"'Remove the unnecessary boolean literal.(ğ¤œÖ
+>
+java:S1125‹"'Remove the unnecessary boolean literal.(ğ¤œÖ
+F	java:S106‘"+Replace this use of System.out by a logger.(Ÿ¦€ıüÿÿÿÿ

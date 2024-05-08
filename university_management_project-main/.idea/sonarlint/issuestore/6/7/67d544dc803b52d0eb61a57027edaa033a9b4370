@@ -1,0 +1,7 @@
+
+r
+java:S1450
+"WRemove the "password" field and declare it as a local variable in the relevant methods.(œãë­úÿÿÿÿ
+D
+java:S2140")Use "java.util.Random.nextInt()" instead.(¿´æôøÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(Éáðè

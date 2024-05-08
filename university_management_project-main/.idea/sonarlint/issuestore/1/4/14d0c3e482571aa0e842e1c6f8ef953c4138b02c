@@ -1,0 +1,11 @@
+
+}
+java:S1488-"bImmediately return this expression instead of assigning it to the temporary variable "noticeList".(ƒˆÑ«ÿÿÿÿÿ
+|
+java:S1488k"fImmediately return this expression instead of assigning it to the temporary variable "resultRowCount".(®ÿ§´
+}
+java:S1488s"bImmediately return this expression instead of assigning it to the temporary variable "noticeList".(’‹ÚÔþÿÿÿÿ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
+@	java:S106 "+Replace this use of System.out by a logger.(¿¥ñÕ
+@	java:S106b"+Replace this use of System.out by a logger.(Û­¸ÿ
